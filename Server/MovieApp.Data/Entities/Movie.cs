@@ -6,9 +6,17 @@ namespace MovieApp.Data.Entities
 {
     public class Movie : BaseEntity
     {
+        public Movie()
+        {
+            ActorMovies = new HashSet<ActorMovies>();
+        }
+
         public string Name { get; set; }
-        public string Genre { get; set; }
+        public int GenreId { get; set; }
+        public Genre Genre { get; set; }
         public string Description { get; set; }
-        public IEnumerable<Actor> Actors {get;set;}
+
+        public IEnumerable<ActorMovies> ActorMovies {get;set;}
+        
     }
 }

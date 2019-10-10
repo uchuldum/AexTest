@@ -5,3 +5,5 @@ D:\RNJIN\MovieApp\MovieApp.Data\obj\Debug\netcoreapp3.0\MovieApp.Data.AssemblyIn
 D:\RNJIN\MovieApp\MovieApp.Data\bin\Debug\netcoreapp3.0\MovieApp.Data.pdb
 D:\RNJIN\MovieApp\MovieApp.Data\obj\Debug\netcoreapp3.0\MovieApp.Data.dll
 D:\RNJIN\MovieApp\MovieApp.Data\obj\Debug\netcoreapp3.0\MovieApp.Data.pdb
+D:\RNJIN\MovieApp\MovieApp.Data\bin\Debug\netcoreapp3.0\MovieApp.Data.runtimeconfig.json
+D:\RNJIN\MovieApp\MovieApp.Data\bin\Debug\netcoreapp3.0\MovieApp.Data.runtimeconfig.dev.json
