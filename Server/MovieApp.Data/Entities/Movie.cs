@@ -9,6 +9,6 @@ namespace MovieApp.Data.Entities
         public string Name { get; set; }
         public string Genre { get; set; }
         public string Description { get; set; }
-        public IEnumerable<Actor> Actors {get;set;}
+        public IEnumerable<Actor> Actors {get; set;}
     }
 }

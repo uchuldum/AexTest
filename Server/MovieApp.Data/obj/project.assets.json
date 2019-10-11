@@ -1013,25 +1013,25 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Уран\\.nuget\\packages\\": {},
+    "C:\\Users\\Uran\\.nuget\\packages\\": {},
     "C:\\Microsoft\\Xamarin\\NuGet\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\RNJIN\\MovieApp\\MovieApp.Data\\MovieApp.Data.csproj",
+      "projectUniqueName": "C:\\Users\\Uran\\Desktop\\Actors\\Server\\MovieApp.Data\\MovieApp.Data.csproj",
       "projectName": "MovieApp.Data",
-      "projectPath": "D:\\RNJIN\\MovieApp\\MovieApp.Data\\MovieApp.Data.csproj",
-      "packagesPath": "C:\\Users\\Уран\\.nuget\\packages\\",
-      "outputPath": "D:\\RNJIN\\MovieApp\\MovieApp.Data\\obj\\",
+      "projectPath": "C:\\Users\\Uran\\Desktop\\Actors\\Server\\MovieApp.Data\\MovieApp.Data.csproj",
+      "packagesPath": "C:\\Users\\Uran\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Uran\\Desktop\\Actors\\Server\\MovieApp.Data\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\",
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\Уран\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Uran\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
