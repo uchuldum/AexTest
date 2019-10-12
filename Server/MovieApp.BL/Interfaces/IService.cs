@@ -6,8 +6,9 @@ namespace MovieApp.BL.Interfaces
 {
     public interface IService<TEntity> : IDisposable where TEntity : class
     {
-        IEnumerable<TEntity> Find(string name);
+        IEnumerable<TEntity> Find(Func<TEntity, bool> predicate);
         IEnumerable<TEntity> GetAll();
         void GetById(int id);
+
     }
 }

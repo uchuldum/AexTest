@@ -22,10 +22,8 @@ namespace MovieApp.BL.Services
             this.mapper = mapper;
         }
 
-        public IEnumerable<ActorDTO> Find(string name)
-        {
-            return null;
-        }
+        public IEnumerable<Actor> Find() => 
+           
 
         public IEnumerable<ActorDTO> GetAll() =>
             mapper.Map<IEnumerable<Actor>, IEnumerable<ActorDTO>>(Db.Actors.GetAll());

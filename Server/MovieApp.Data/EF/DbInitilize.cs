@@ -13,7 +13,7 @@ namespace MovieApp.Data.EF
         {
             try
             {
-                context.Database.EnsureCreated();
+                _ = context.Database.EnsureCreated();
                 if (!context.Actors.Any()) 
                 {
                     context.Actors.AddRange(GetInitializeActors());
@@ -31,8 +31,6 @@ namespace MovieApp.Data.EF
                 throw new Exception(ex.ToString());
             }
         }
-
-
         static IEnumerable<Genre> GetInitializeGenres() =>
             new List<Genre>()
             {
