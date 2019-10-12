@@ -9,17 +9,10 @@ using System.Text;
 
 namespace MovieApp.Data.Repositories
 {
-    public class MovieRepository : Repository<Movie>, IMovieRepository
+    public class MovieRepository : Repository<Movie>
     {
-        public MovieRepository(MovieAppContext context) : base(context) 
-        { }
-
-        public MovieAppContext Context
+        public MovieRepository(MovieAppContext context) : base(context)
         {
-            get => Context as MovieAppContext;
         }
-
-        public Movie GetMovieWithActors(int id) =>
-            Context.Movies.Include(a => a.ActorMovies).SingleOrDefault(a => a.Id == id);
     }
 }

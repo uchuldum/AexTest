@@ -9,14 +9,15 @@ namespace MovieApp.Data.Entities
         public Movie()
         {
             ActorMovies = new HashSet<ActorMovies>();
+            MovieGenres = new HashSet<MovieGenres>();
         }
 
         public string Name { get; set; }
-        public int GenreId { get; set; }
-        public Genre Genre { get; set; }
+        public string ImageUri { get; set; }
         public string Description { get; set; }
 
         public IEnumerable<ActorMovies> ActorMovies {get;set;}
+        public IEnumerable<MovieGenres> MovieGenres { get; set; }
         
     }
 }

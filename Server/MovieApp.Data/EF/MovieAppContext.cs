@@ -16,6 +16,7 @@ namespace MovieApp.Data.EF
         public DbSet<Actor> Actors { get; set; }
         public DbSet<Genre> Genres { get; set; }
         public DbSet<ActorMovies> ActorMovies { get; set; }
+        public DbSet<MovieGenres> MovieGenres { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
@@ -32,6 +33,7 @@ namespace MovieApp.Data.EF
             builder.ApplyConfiguration(new MovieConfiguration());
             builder.ApplyConfiguration(new GenreConfiguration());
             builder.ApplyConfiguration(new ActorMoviesConfiguration());
+            builder.ApplyConfiguration(new MovieGenresConfiguration());
         }
         
     }
