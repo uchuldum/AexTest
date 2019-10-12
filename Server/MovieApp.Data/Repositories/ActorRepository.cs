@@ -20,6 +20,6 @@ namespace MovieApp.Data.Repositories
         }
 
         public Actor GetActorWithMovies(int id) =>
-            Context.Actors.Include(a => a.Movies).SingleOrDefault(a => a.Id == id);
+            Context.Actors.Include(a => a.ActorMovies).SingleOrDefault(a => a.Id == id);
     }
 }

@@ -9,17 +9,19 @@ namespace MovieApp.Data
     public class UnitOfWork : IUnitOfWork
     {
         private readonly MovieAppContext context;
-        
+
+        public IMovieRepository Movies { get; private set; }
+        public IActorRepository Actors { get; private set; }
+        public IGenreRepository Genres { get; set; }
+
         public UnitOfWork( MovieAppContext context)
         {
             this.context = context;
             Movies = new MovieRepository(this.context);
             Actors = new ActorRepository(this.context);
+            Genres = new GenreRepository(this.context);
         }
-        public IMovieRepository Movies { get; private set; }
-
-        public IActorRepository Actors { get; private set; }
-
+        
         public int Save()
         {
             return context.SaveChanges();

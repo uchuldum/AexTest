@@ -30,13 +30,10 @@ namespace MovieApp.Data.Repositories
         public void Add(TEntity entity) =>
             context.Set<TEntity>().Add(entity);
 
-        public void AddRange(IEnumerable<TEntity> entities) => 
-            context.Set<TEntity>().AddRange(entities);
-
         public void Remove(TEntity entity) => 
             context.Set<TEntity>().Remove(entity);
 
-        public void RemoveRange(IEnumerable<TEntity> entities) => 
-            context.Set<TEntity>().RemoveRange(entities);
+        public void Update(TEntity entity) =>
+            context.Entry(entity).State = EntityState.Modified;
     }
 }
