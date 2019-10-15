@@ -18,27 +18,32 @@ namespace Cinema.DAL.Repositories
             Context = context;
         }
 
-       /* public AEXTestDBContext Context
-        {
-            get => Context as AEXTestDBContext;
-        }*/
-
         /*Get movies by autor*/
-        public async Task<IEnumerable<Movie>> GetMovies(Actor actor)
+        public async Task<IEnumerable<Movie>> GetMovies(int actor)
         {
-            return await Context.Movies.Where(m => m.MoviesActors.Any(ma => ma.ActorId == actor.Id)).ToListAsync();
+            return await Context.Movies.Where(m => m.MoviesActors.Any(ma => ma.ActorId == actor)).ToListAsync();
         }
 
-        /*Get movies by genre*/
-        public async Task<IEnumerable<Movie>> GetMovies(Genre genre)
+        /*Get movies by genres*/
+        public async Task<IEnumerable<Movie>> GetMovies(int[] genres)
         {
-            return await Context.Movies.Where(m => m.MoviesGenres.Any(mg => mg.GenreId == genre.Id)).ToListAsync();
+            IQueryable<Movie> movies = Context.Movies;
+            foreach (var genreId in genres)
+                movies = movies.Include(m => m.MoviesActors).Where(m => m.MoviesGenres.Any(g => g.GenreId == genreId));
+            return await movies.ToListAsync();
+        }
+        
+        /*Get movies by genres and actor*/
+        public async Task<IEnumerable<Movie>> GetMovies(int actor, int[] genres)
+        {
+            IEnumerable<Movie> movies = await GetMovies(genres);
+            return movies.Where(m => m.MoviesActors.Any(ma => ma.ActorId == actor)).ToList();
         }
 
-        public async Task<IEnumerable<Movie>> GetMovies(Actor actor, Genre genre)
+        /*Get movies by name*/
+        public async Task<IEnumerable<Movie>> GetMovies(string name)
         {
-            return await Context.Movies.Where(m => m.MoviesGenres.Any(mg => mg.GenreId == genre.Id) &&
-                                             m.MoviesActors.Any(ma => ma.ActorId == actor.Id)).ToListAsync();
+            return await Context.Movies.Where(m => m.Name.ToLower().StartsWith(name)).ToListAsync();
         }
     }
 }

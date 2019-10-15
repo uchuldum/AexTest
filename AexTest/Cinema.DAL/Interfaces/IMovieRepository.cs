@@ -7,8 +7,9 @@ namespace Cinema.DAL.Interfaces
 {
     public interface IMovieRepository : IRepository<Movie>
     {
-        Task<IEnumerable<Movie>> GetMovies(Actor actor);
-        Task<IEnumerable<Movie>> GetMovies(Genre genre);
-        Task<IEnumerable<Movie>> GetMovies(Actor actor, Genre genre);
+        Task<IEnumerable<Movie>> GetMovies(int actor);
+        Task<IEnumerable<Movie>> GetMovies(int[] genres);
+        Task<IEnumerable<Movie>> GetMovies(int actor, int[] genres);
+        Task<IEnumerable<Movie>> GetMovies(string name);
     }
 }

@@ -31,25 +31,39 @@ namespace Cinema.BLL.Services
             return mapper.Map<MovieDTO>(await database.MovieRepository.GetById(id));
         }
 
-        public async Task<IEnumerable<MovieDTO>> GetMovieDTOs(ActorDTO actorDTO)
+        private async Task<IEnumerable<MovieDTO>> GetMovieDTOs(int actors)
         {
-            return mapper.Map<IEnumerable<MovieDTO>>(await database.MovieRepository.GetMovies(mapper.Map<Actor>(actorDTO)));
+            return mapper.Map<IEnumerable<MovieDTO>>(await database.MovieRepository.GetMovies(actors));
         }
 
-        public async Task<IEnumerable<MovieDTO>> GetMovieDTOs(GenreDTO genreDTO)
+        private async Task<IEnumerable<MovieDTO>> GetMovieDTOs(int[] genre)
         {
-            return mapper.Map<IEnumerable<MovieDTO>>(await database.MovieRepository.GetMovies(mapper.Map<Genre>(genreDTO)));
+            return mapper.Map<IEnumerable<MovieDTO>>(await database.MovieRepository.GetMovies(genre));
         }
 
-        public async Task<IEnumerable<MovieDTO>> GetMovieDTOs(ActorDTO actorDTO, GenreDTO genreDTO)
+        public async Task<IEnumerable<MovieDTO>> GetMovieDTOs(string name)
         {
-            if (actorDTO.Id == 0)
-                return await GetMovieDTOs(genreDTO);
-            if(genreDTO.Id == 0)
-                return await GetMovieDTOs(actorDTO);
+            if (name == null) return await GetAll();
+            return mapper.Map<IEnumerable<MovieDTO>>(await database.MovieRepository.GetMovies(name.ToLower()));
+        }
+
+        public async Task<IEnumerable<MovieDTO>> GetMovieDTOs(int actor, int[] genres)
+        {
+            int isAllZero = 0;
+            foreach (var genre in genres)
+            {
+                if (actor < 0) return null;
+                isAllZero += genre;
+            }
+            if (isAllZero == 0)
+                if (actor == 0)
+                    return await GetAll();
+                else return await GetMovieDTOs(actor);
+            if(actor == 0)
+                return await GetMovieDTOs(genres);
             return mapper.Map<IEnumerable<MovieDTO>>(await database
                                                             .MovieRepository
-                                                            .GetMovies(mapper.Map<Actor>(actorDTO),mapper.Map<Genre>(genreDTO)));
+                                                            .GetMovies(actor, genres));
         }
     }
 }

@@ -31,10 +31,18 @@ namespace Cinema.API.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> GetByCondition(int actor, int genre)
+        public async Task<IActionResult> GetByCondition([FromQuery]int[] genre, int actor)
         {
-            if (actor == 0 && genre == 0) return NotFound();
-            return Ok(mapper.Map<IEnumerable<MovieViewModel>>(await service.GetMovieDTOs(new ActorDTO { Id = actor },new GenreDTO { Id = genre})));
+            IEnumerable<MovieViewModel> movies = mapper.Map<IEnumerable<MovieViewModel>>(await service.GetMovieDTOs(actor, genre));
+            return Ok(movies);
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> GetByMovieName(string name)
+        {   
+            IEnumerable<MovieViewModel> movies = mapper.Map<IEnumerable<MovieViewModel>>(await service.GetMovieDTOs(name));
+            if (movies == null) return BadRequest();
+            return Ok(movies);
         }
     }
 }

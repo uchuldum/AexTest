@@ -2,7 +2,7 @@
     <header>
       <nav class="navbar navbar-expand-lg navbar-dark fixed-top scrolling-navbar">
         <div class="container">
-          <a href="#" class="navbar-brand">Поиск фильмов</a>
+          <a href="#" class="navbar-brand">Ламповые вечерочки</a>
           <button class="navbar-toggler" type="button"
            data-toggle="collapse" data-target="#basicExampleNav"
            aria-controls="basicExampleNav" aria-expanded="false" 
@@ -13,19 +13,16 @@
           <div class="collapse navbar-collapse" id="basicExampleNav">
             <ul class="navbar-nav mr-auto smooth-scroll">
               <li class="nav-item">
-                <a href="#" class="nav-link waves-effect waves-light">Home</a>
+                <a href="#" class="nav-link waves-effect waves-light">Фильмы</a>
               </li>
               <li class="nav-item">
-                <a href="#" class="nav-link waves-effect waves-light">Blog</a>
+                <a href="#" class="nav-link waves-effect waves-light">Сериалы</a>
               </li>
               <li class="nav-item">
-                <a href="#" class="nav-link waves-effect waves-light">News</a>
+                <a href="#" class="nav-link waves-effect waves-light">Трейлеры</a>
               </li>
               <li class="nav-item">
-                <a href="#" class="nav-link waves-effect waves-light">Support</a>
-              </li>
-              <li class="nav-item">
-                <a href="#" class="nav-link waves-effect waves-light">Home</a>
+                <a href="#" class="nav-link waves-effect waves-light">Новости</a>
               </li>
             </ul>
             <ul class="navbar-nav ml-auto nav-flex-icons">
@@ -54,17 +51,12 @@
             <div class="row d-flex justify-content-center text-center">
               <div class="col-md-10">
                 <h2 class="display-4 font-weight-bold white-text pt-5 mb-2">
-                  фывфыв
+                  "Ковер задавал тон всей комнате"
                 </h2>
                 <hr class="hr-light">
                 <h4 class="white-text my-4">
-                  Get started with MDBootstrap - world's most popular Material Design
-                   framework for building responsive, mobile-first websites & apps.
+                  Чувак (Большой Лебовски)
                 </h4>
-                <button class="btn btn-outline-white waves-effect waves-light">
-                  Read more
-                  <i class="fa fa-book"></i>
-                </button>
               </div>
             </div>
           </div>
